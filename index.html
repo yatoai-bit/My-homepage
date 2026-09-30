@@ -3,13 +3,493 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Homepage</title>
+
+  <title>YATO | WEB DESIGNER</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f3ef;
+      color: #111;
+      font-family: "Noto Sans JP", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ====================
+       HERO
+    ==================== */
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80")
+        center / cover;
+
+      color: white;
+      padding: 30px 7%;
+      position: relative;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Gelasio", serif;
+      font-size: 25px;
+      letter-spacing: 7px;
+    }
+
+    .logo span {
+      display: block;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+      font-size: 13px;
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 7%;
+      bottom: 15%;
+    }
+
+    .hero-content h1 {
+      font-family: "Gelasio", serif;
+      font-size: clamp(60px, 10vw, 130px);
+      font-weight: 400;
+      letter-spacing: 8px;
+    }
+
+    .hero-content h2 {
+      font-size: 17px;
+      letter-spacing: 8px;
+      font-weight: 300;
+      margin-top: 5px;
+    }
+
+    .hero-content p {
+      margin-top: 30px;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .view-work {
+      display: inline-block;
+      margin-top: 35px;
+      border-bottom: 1px solid white;
+      padding-bottom: 10px;
+      font-size: 13px;
+    }
+
+    /* ====================
+       SECTION
+    ==================== */
+
+    section {
+      padding: 120px 7%;
+    }
+
+    .section-number {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-family: "Gelasio", serif;
+      font-size: clamp(45px, 6vw, 80px);
+      font-weight: 400;
+      letter-spacing: 5px;
+      margin-bottom: 50px;
+    }
+
+    /* ====================
+       WORKS
+    ==================== */
+
+    .works {
+      background: #f5f3ef;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .work img {
+      width: 100%;
+      aspect-ratio: 1.4;
+      object-fit: cover;
+      display: block;
+    }
+
+    .work-info {
+      padding-top: 18px;
+    }
+
+    .work-info h3 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .work-info p {
+      font-size: 11px;
+      color: #777;
+      margin-top: 7px;
+      letter-spacing: 1px;
+    }
+
+    /* ====================
+       ABOUT
+    ==================== */
+
+    .about {
+      background: #101313;
+      color: white;
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text p {
+      line-height: 2.3;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .about img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+    }
+
+    /* ====================
+       SKILLS
+    ==================== */
+
+    .skills {
+      background: #f5f3ef;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .skill {
+      padding: 30px 10px;
+      border-right: 1px solid #ccc;
+    }
+
+    .skill:last-child {
+      border-right: none;
+    }
+
+    .skill h3 {
+      font-family: "Gelasio", serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .skill p {
+      font-size: 11px;
+      line-height: 1.8;
+      color: #777;
+    }
+
+    /* ====================
+       CONTACT
+    ==================== */
+
+    .contact {
+      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80")
+        center / cover;
+    }
+
+    .contact p {
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      margin-top: 30px;
+      border: 1px solid white;
+      padding: 15px 30px;
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 11px;
+      opacity: .7;
+    }
+
+    /* ====================
+       MOBILE
+    ==================== */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        min-height: 90vh;
+        padding: 25px 6%;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 11px;
+      }
+
+      .hero-content {
+        left: 6%;
+        bottom: 12%;
+      }
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .works-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .skill {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
-  <h1>My Homepage</h1>
-  <p>ここに自分のホームページを作っていきます。</p>
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <nav class="nav">
+
+      <div class="logo">
+        YATO
+        <span>WEB DESIGNER</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#works">Works</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </nav>
+
+    <div class="hero-content">
+
+      <h1>YATO</h1>
+
+      <h2>WEB DESIGNER</h2>
+
+      <p>
+        想いをカタチにする、<br>
+        そんなWebサイトを作っています。
+      </p>
+
+      <a class="view-work" href="#works">
+        View Works　→
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- WORKS -->
+
+  <section class="works" id="works">
+
+    <div class="section-number">01</div>
+
+    <h2 class="section-title">WORKS</h2>
+
+    <div class="works-grid">
+
+      <div class="work">
+
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80">
+
+        <div class="work-info">
+          <h3>My Portfolio Site</h3>
+          <p>HTML / CSS / JS</p>
+        </div>
+
+      </div>
+
+
+      <div class="work">
+
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80">
+
+        <div class="work-info">
+          <h3>Cafe Website</h3>
+          <p>HTML / CSS / JS</p>
+        </div>
+
+      </div>
+
+
+      <div class="work">
+
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80">
+
+        <div class="work-info">
+          <h3>Travel Blog</h3>
+          <p>HTML / CSS / JS</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="section-number">02</div>
+
+    <h2 class="section-title">ABOUT</h2>
+
+    <div class="about-inner">
+
+      <div class="about-text">
+
+        <p>
+          はじめまして、Yatoです。<br>
+          現在はWeb制作を学びながら、<br>
+          シンプルで見やすく、使いやすいサイトを<br>
+          作ることを目指して日々勉強しています。
+        </p>
+
+      </div>
+
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=80">
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section class="skills">
+
+    <div class="section-number">03</div>
+
+    <h2 class="section-title">SKILLS</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill">
+        <h3>HTML</h3>
+        <p>Webページの構造を<br>作ることができます。</p>
+      </div>
+
+      <div class="skill">
+        <h3>CSS</h3>
+        <p>デザインを整えて<br>見た目を作ることができます。</p>
+      </div>
+
+      <div class="skill">
+        <h3>JavaScript</h3>
+        <p>動きをつけて<br>インタラクティブな表現ができます。</p>
+      </div>
+
+      <div class="skill">
+        <h3>WordPress</h3>
+        <p>ブログやサイトの<br>構築ができます。</p>
+      </div>
+
+      <div class="skill">
+        <h3>Figma</h3>
+        <p>デザインの作成や<br>UI設計ができます。</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-number">04</div>
+
+    <h2 class="section-title">CONTACT</h2>
+
+    <p>
+      お仕事のご依頼・ご相談など<br>
+      お気軽にご連絡ください。
+    </p>
+
+    <a class="contact-button" href="mailto:example@example.com">
+      Contact Form　→
+    </a>
+
+    <footer>
+      © 2026 YATO. All rights reserved.
+    </footer>
+
+  </section>
 
 </body>
 </html>
